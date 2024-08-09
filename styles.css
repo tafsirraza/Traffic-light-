@@ -1,0 +1,94 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Traffic Light Container */
+.traffic-light {
+    width: 120px;
+    height: 360px;
+    background: #222;
+    border-radius: 25px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+/* Light Container */
+.light {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Counter Styling */
+.counter {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: bold;
+    opacity: 0;
+}
+
+/* Red Light */
+.red {
+    background: radial-gradient(circle, rgba(255, 0, 0, 1) 20%, rgba(180, 0, 0, 1) 70%);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+
+/* Yellow Light */
+.yellow {
+    background: radial-gradient(circle, rgba(255, 255, 0, 1) 20%, rgba(180, 180, 0, 1) 70%);
+    box-shadow: 0 0 15px rgba(255, 255, 0, 0.5);
+}
+
+/* Green Light */
+.green {
+    background: radial-gradient(circle, rgba(0, 255, 0, 1) 20%, rgba(0, 180, 0, 1) 70%);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+}
+
+/* Active Light */
+.active {
+    animation: lightGlow 1s infinite alternate;
+}
+
+/* Counter Animation */
+.counter-visible {
+    animation: counterFadeIn 0.3s forwards;
+}
+
+/* Keyframes for Light Glow */
+@keyframes lightGlow {
+    from { box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); }
+    to { box-shadow: 0 0 25px rgba(255, 0, 0, 0.8); }
+}
+
+/* Keyframes for Counter Fade-In */
+@keyframes counterFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Adapt the Glow Animation to Other Colors */
+.red.active { box-shadow: 0 0 25px rgba(255, 0, 0, 1); }
+.yellow.active { box-shadow: 0 0 25px rgba(255, 255, 0, 1); }
+.green.active { box-shadow: 0 0 25px rgba(0, 255, 0, 1); }
+
